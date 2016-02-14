@@ -6,12 +6,14 @@ Generic templating interface for Crystal.
 
 Simplify developers' lives by abstracting template rendering for multiple template languages.
 
-## Supported
+## Supported out of the box
 
 | Language | File extensions | Required libraries |
 | -------- | --------------- | ------------------ |
 | ECR      | .ecr            | none (part of the stdlib) |
-| Slang    | .slang          | [slang](https://github.com/jeromegn/slang) |
+
+See also:
+[Registering your own template engine](#registering-your-own-template-engine).
 
 ## Installation
 
@@ -54,6 +56,26 @@ end
 
 puts str # => <compiled template>
 ```
+
+## Registering your own template engine
+
+Use `Kilt.register_template(extension, embed_command)` macro:
+
+```crystal
+require "kilt"
+
+module MyEngine
+  macro embed(filename, io_name)
+    # ....
+  end
+end
+
+Kilt.register_template(".myeng", ::MyEngine.embed)
+```
+
+This can be part of your own `my-engine` library: in this case it should depend
+on `kilt` directly, or this could be a part of adapter library, like:
+`kilt-my-engine`, which will depend on both `kilt` and `my-engine`.
 
 ## Contributing
 
