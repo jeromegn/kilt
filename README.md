@@ -10,7 +10,7 @@ Simplify developers' lives by abstracting template rendering for multiple templa
 
 | Language | File extensions | Required libraries |
 | -------- | --------------- | ------------------ |
-| ECR      | .ecr            | none               |
+| ECR      | .ecr            | none (part of the stdlib) |
 | Slang    | .slang          | [slang](https://github.com/jeromegn/slang) |
 
 ## Installation
@@ -24,6 +24,8 @@ dependencies:
   
   # Any other template languages Crystal shard
 ```
+
+Kilt essentially adds two macros `Kilt.embed` and `Kilt.file`, the code is really simple.
 
 ## Usage
 

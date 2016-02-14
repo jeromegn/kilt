@@ -1,6 +1,6 @@
 require "spec"
-require "slang"
 require "../src/kilt"
+require "slang"
 
 macro render_file(filename)
   String.build do |__io__|
