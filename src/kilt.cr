@@ -2,8 +2,8 @@ require "ecr/macros"
 require "./kilt/*"
 
 module Kilt
-  
-  macro embed(filename, io_name = "__io__")
+
+  macro embed(filename, io_name = "__kilt_io__")
     {% if filename.ends_with?(".ecr") %}
       embed_ecr({{filename}}, {{io_name}})
     {% elsif filename.ends_with?(".slang") %}
@@ -13,9 +13,9 @@ module Kilt
     {% end %}
   end
 
-  macro file(filename)
-    def to_s(__io__)
-      Kilt.embed({{filename}}, "__io__")
+  macro file(filename, io_name = "__kilt_io__")
+    def to_s({{io_name.id}})
+      Kilt.embed({{filename}}, {{io_name}})
     end
   end
 

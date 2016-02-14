@@ -25,11 +25,14 @@ dependencies:
   # Any other template languages Crystal shard
 ```
 
-Kilt essentially adds two macros `Kilt.embed` and `Kilt.file`, the code is really simple.
-
 ## Usage
 
-Add template language dependencies, as listed in the support table above.
+- Kilt essentially adds two macros `Kilt.embed` and `Kilt.file`, the code is really simple.
+- Add template language dependencies, as listed in the support table above.
+
+Both macros take a `filename` and a `io_name` (the latter defaults to `"__kilt_io__"`)
+
+### Example
 
 ```crystal
 require "kilt"
@@ -45,8 +48,8 @@ puts YourView.new.to_s # => <compiled template>
 
 # Embedded
 
-str = String.build do |str|
-  Kilt.embed "path/to/template.slang", "str"
+str = String.build do |__kilt_io__|
+  Kilt.embed "path/to/template.slang"
 end
 
 puts str # => <compiled template>
