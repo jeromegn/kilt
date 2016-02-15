@@ -12,6 +12,7 @@ Simplify developers' lives by abstracting template rendering for multiple templa
 | -------- | --------------- | ------------------ | ---------- |
 | ECR      | .ecr            | none (part of the stdlib) | |
 | Mustache | .mustache       | [crustache](https://github.com/MakeNowJust/crustache) | [@MakeNowJust](https://github.com/MakeNowJust) |
+| Slang    | .slang          | [slang](https://github.com/jeromegn/slang) | [@jeromegn](https://github.com/jeromegn) |
 
 See also:
 [Registering your own template engine](#registering-your-own-template-engine).
@@ -39,7 +40,10 @@ Both macros take a `filename` and a `io_name` (the latter defaults to `"__kilt_i
 
 ```crystal
 require "kilt"
-require "slang" # if you want to use Slang templates, for instance
+
+# For slang, try:
+require "slang"
+require "kilt/slang"
 
 # With a Class
 
@@ -51,11 +55,13 @@ puts YourView.new.to_s # => <compiled template>
 
 # Embedded
 
+str = Kilt.render "path/to/template.slang"
+
+# or
+
 str = String.build do |__kilt_io__|
   Kilt.embed "path/to/template.slang"
 end
-
-# or `Kilt.render "path/to/template.slang"`
 
 puts str # => <compiled template>
 ```
@@ -73,7 +79,7 @@ module MyEngine
   end
 end
 
-Kilt.register_engine("myeng", ::MyEngine.embed)
+Kilt.register_engine("myeng", MyEngine.embed)
 ```
 
 This can be part of your own `my-engine` library: in this case it should depend
@@ -94,3 +100,4 @@ Please contribute your own "adapter" if you create a template language for Cryst
 
 - [jeromegn](https://github.com/jeromegn) Jerome Gravel-Niquet - creator, maintainer
 - [waterlink](https://github.com/waterlink) Oleksii Fedorov
+- [MakeNowJust](https://github.com/MakeNowJust) TSUYUSATO Kitsune

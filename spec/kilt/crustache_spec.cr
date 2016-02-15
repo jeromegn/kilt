@@ -1,5 +1,5 @@
-require "./spec_helper"
-require "../src/mustache"
+require "../spec_helper"
+require "../../src/kilt/crustache"
 
 class MustacheView
   def has_key?(name)
@@ -13,9 +13,9 @@ class MustacheView
   Kilt.file "spec/fixtures/test.mustache", "__kilt_io__", self
 end
 
-describe Kilt do
+describe "kilt/crustache" do
 
-  it "renders ecr" do
+  it "renders crustache" do
     Kilt.render("spec/fixtures/test.mustache", { "pid" => Process.pid }).should eq("<span>#{Process.pid}</span>")
   end
 

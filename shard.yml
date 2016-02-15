@@ -7,5 +7,7 @@ authors:
 license: MIT
 
 development_dependencies:
+  slang:
+    github: jeromegn/slang
   crustache:
     github: MakeNowJust/crustache

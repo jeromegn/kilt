@@ -1,5 +1,5 @@
-require "ecr/macros"
-require "./kilt/*"
+require "./kilt/version"
+require "./kilt/exception"
 
 module Kilt
   # macro only constant
@@ -32,4 +32,4 @@ module Kilt
   end
 end
 
-Kilt.register_engine("ecr", embed_ecr)
+require "./kilt/ecr"
