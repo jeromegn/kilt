@@ -13,10 +13,10 @@ module Kilt
     {% ext = filename.split(".").last %}
     {% ext_with_dot = ".#{ext.id}" %}
 
-    {% if ::Kilt::TEMPLATES[ext_with_dot] == nil %}
-      raise Kilt::Exception.new("Unsupported template type \"" + {{ext}} + "\"")
-    {% else %}
+    {% if ::Kilt::TEMPLATES[ext_with_dot] %}
       {{::Kilt::TEMPLATES[ext_with_dot]}}({{filename}}, {{io_name}})
+    {% else %}
+      raise Kilt::Exception.new("Unsupported template type \"" + {{ext}} + "\"")
     {% end %}
   end
 
