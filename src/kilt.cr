@@ -11,10 +11,9 @@ module Kilt
 
   macro embed(filename, io_name = "__kilt_io__")
     {% ext = filename.split(".").last %}
-    {% ext_with_dot = ".#{ext.id}" %}
 
-    {% if ::Kilt::TEMPLATES[ext_with_dot] %}
-      {{::Kilt::TEMPLATES[ext_with_dot]}}({{filename}}, {{io_name}})
+    {% if ::Kilt::TEMPLATES[ext] %}
+      {{::Kilt::TEMPLATES[ext]}}({{filename}}, {{io_name}})
     {% else %}
       raise Kilt::Exception.new("Unsupported template type \"" + {{ext}} + "\"")
     {% end %}
@@ -27,4 +26,4 @@ module Kilt
   end
 end
 
-::Kilt.register_template(".ecr", embed_ecr)
+::Kilt.register_template("ecr", embed_ecr)

@@ -70,7 +70,7 @@ module MyEngine
   end
 end
 
-Kilt.register_template(".myeng", ::MyEngine.embed)
+Kilt.register_template("myeng", ::MyEngine.embed)
 ```
 
 This can be part of your own `my-engine` library: in this case it should depend
