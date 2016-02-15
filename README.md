@@ -8,9 +8,10 @@ Simplify developers' lives by abstracting template rendering for multiple templa
 
 ## Supported out of the box
 
-| Language | File extensions | Required libraries |
-| -------- | --------------- | ------------------ |
-| ECR      | .ecr            | none (part of the stdlib) |
+| Language | File extensions | Required libraries | Maintainer |
+| -------- | --------------- | ------------------ | ---------- |
+| ECR      | .ecr            | none (part of the stdlib) | |
+| Mustache | .mustache       | [crustache](https://github.com/MakeNowJust/crustache) | [@MakeNowJust](https://github.com/MakeNowJust) |
 
 See also:
 [Registering your own template engine](#registering-your-own-template-engine).
