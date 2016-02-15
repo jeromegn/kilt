@@ -41,8 +41,7 @@ Both macros take a `filename` and a `io_name` (the latter defaults to `"__kilt_i
 ```crystal
 require "kilt"
 
-# For slang, try:
-require "slang"
+# For slang, add:
 require "kilt/slang"
 
 # With a Class
