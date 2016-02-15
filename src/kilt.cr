@@ -2,14 +2,20 @@ require "ecr/macros"
 require "./kilt/*"
 
 module Kilt
+  # macro only constant
+  TEMPLATES = {} of String => Int32
+
+  macro register_template(ext, embed_macro)
+    {% ::Kilt::TEMPLATES[ext] = embed_macro %}
+  end
 
   macro embed(filename, io_name = "__kilt_io__")
-    {% if filename.ends_with?(".ecr") %}
-      embed_ecr({{filename}}, {{io_name}})
-    {% elsif filename.ends_with?(".slang") %}
-      embed_slang({{filename}}, {{io_name}})
+    {% ext = filename.split(".").last %}
+
+    {% if ::Kilt::TEMPLATES[ext] %}
+      {{::Kilt::TEMPLATES[ext]}}({{filename}}, {{io_name}})
     {% else %}
-      raise Kilt::Exception.new("Unsupported template type \"" + {{filename.split(".").last}} + "\"")
+      raise Kilt::Exception.new("Unsupported template type \"" + {{ext}} + "\"")
     {% end %}
   end
 
@@ -18,5 +24,6 @@ module Kilt
       Kilt.embed({{filename}}, {{io_name}})
     end
   end
-
 end
+
+::Kilt.register_template("ecr", embed_ecr)
