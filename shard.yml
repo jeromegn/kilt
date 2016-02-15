@@ -5,7 +5,3 @@ authors:
   - Jerome Gravel-Niquet <jeromegn@gmail.com>
 
 license: MIT
-
-development_dependencies:
-  slang:
-    github: jeromegn/slang

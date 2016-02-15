@@ -7,11 +7,12 @@ end
 describe Kilt do
 
   it "renders ecr" do
-    render_file("spec/fixtures/test.ecr").should eq("<span>#{Process.pid}</span>")
+    Kilt.render("spec/fixtures/test.ecr").should eq("<span>#{Process.pid}</span>")
   end
 
-  it "renders slang" do
-    render_file("spec/fixtures/test.slang").should eq("<span>#{Process.pid}</span>")
+  it "renders registered engine" do
+    Kilt.register_engine "raw", Raw.embed
+    Kilt.render("spec/fixtures/test.raw").should eq("Hello World!")
   end
 
   it "works with classes" do
@@ -20,7 +21,7 @@ describe Kilt do
 
   it "raises with unsupported filetype" do
     expect_raises(Kilt::Exception, "Unsupported template engine for extension: \"abc\"") {
-      render_file("test.abc")
+      Kilt.render("test.abc")
     }
   end
 
