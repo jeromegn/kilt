@@ -54,12 +54,14 @@ str = String.build do |__kilt_io__|
   Kilt.embed "path/to/template.slang"
 end
 
+# or `Kilt.render "path/to/template.slang"`
+
 puts str # => <compiled template>
 ```
 
 ## Registering your own template engine
 
-Use `Kilt.register_template(extension, embed_command)` macro:
+Use `Kilt.register_engine(extension, embed_command)` macro:
 
 ```crystal
 require "kilt"
@@ -70,7 +72,7 @@ module MyEngine
   end
 end
 
-Kilt.register_template("myeng", ::MyEngine.embed)
+Kilt.register_engine("myeng", ::MyEngine.embed)
 ```
 
 This can be part of your own `my-engine` library: in this case it should depend
@@ -90,3 +92,4 @@ Please contribute your own "adapter" if you create a template language for Cryst
 ## Contributors
 
 - [jeromegn](https://github.com/jeromegn) Jerome Gravel-Niquet - creator, maintainer
+- [waterlink](https://github.com/waterlink) Oleksii Fedorov

@@ -3,27 +3,33 @@ require "./kilt/*"
 
 module Kilt
   # macro only constant
-  TEMPLATES = {} of String => Int32
+  ENGINES = {} of String => Int32
 
-  macro register_template(ext, embed_macro)
-    {% ::Kilt::TEMPLATES[ext] = embed_macro %}
+  macro register_engine(ext, embed_macro)
+    {% Kilt::ENGINES[ext] = embed_macro.id %}
   end
 
-  macro embed(filename, io_name = "__kilt_io__")
+  macro embed(filename, io_name = "__kilt_io__", *args)
     {% ext = filename.split(".").last %}
 
-    {% if ::Kilt::TEMPLATES[ext] %}
-      {{::Kilt::TEMPLATES[ext]}}({{filename}}, {{io_name}})
+    {% if Kilt::ENGINES[ext] %}
+      {{Kilt::ENGINES[ext]}}({{filename}}, {{io_name}}, {{*args}})
     {% else %}
-      raise Kilt::Exception.new("Unsupported template type \"" + {{ext}} + "\"")
+      raise Kilt::Exception.new("Unsupported template engine for extension: \"" + {{ext}} + "\"")
     {% end %}
   end
 
-  macro file(filename, io_name = "__kilt_io__")
+  macro render(filename, *args)
+    String.build do |__kilt_io__|
+      Kilt.embed({{filename}}, "__kilt_io__", {{*args}})
+    end
+  end
+
+  macro file(filename, io_name = "__kilt_io__", *args)
     def to_s({{io_name.id}})
-      Kilt.embed({{filename}}, {{io_name}})
+      Kilt.embed({{filename}}, {{io_name}}, {{*args}})
     end
   end
 end
 
-::Kilt.register_template("ecr", embed_ecr)
+Kilt.register_engine("ecr", embed_ecr)

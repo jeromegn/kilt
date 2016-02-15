@@ -19,7 +19,7 @@ describe Kilt do
   end
 
   it "raises with unsupported filetype" do
-    expect_raises(Kilt::Exception, "Unsupported template type \"abc\"") {
+    expect_raises(Kilt::Exception, "Unsupported template engine for extension: \"abc\"") {
       render_file("test.abc")
     }
   end

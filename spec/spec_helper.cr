@@ -2,7 +2,7 @@ require "spec"
 require "../src/kilt"
 
 require "slang"
-Kilt.register_template("slang", embed_slang)
+Kilt.register_engine("slang", embed_slang)
 
 macro render_file(filename)
   String.build do |__io__|
