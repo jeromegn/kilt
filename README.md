@@ -13,6 +13,7 @@ Simplify developers' lives by abstracting template rendering for multiple templa
 | ECR      | .ecr            | none (part of the stdlib) | |
 | Mustache | .mustache       | [crustache](https://github.com/MakeNowJust/crustache) | [@MakeNowJust](https://github.com/MakeNowJust) |
 | Slang    | .slang          | [slang](https://github.com/jeromegn/slang) | [@jeromegn](https://github.com/jeromegn) |
+| Temel    | .temel          | [temel](https://github.com/f/temel) | [@f](https://github.com/f) |
 
 See also:
 [Registering your own template engine](#registering-your-own-template-engine).
@@ -25,7 +26,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   kilt:
     github: jeromegn/kilt
-  
+
   # Any other template languages Crystal shard
 ```
 
@@ -100,3 +101,4 @@ Please contribute your own "adapter" if you create a template language for Cryst
 - [jeromegn](https://github.com/jeromegn) Jerome Gravel-Niquet - creator, maintainer
 - [waterlink](https://github.com/waterlink) Oleksii Fedorov
 - [MakeNowJust](https://github.com/MakeNowJust) TSUYUSATO Kitsune
+- [f](https://github.com/f) Fatih Kadir Akın
