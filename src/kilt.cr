@@ -32,4 +32,4 @@ module Kilt
   end
 end
 
-require "./kilt/ecr"
+require "./ecr"

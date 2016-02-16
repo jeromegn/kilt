@@ -1,5 +1,5 @@
 require "../spec_helper"
-require "../../src/kilt/slang"
+require "../../src/slang"
 
 class SlangView
   Kilt.file "spec/fixtures/test.slang"

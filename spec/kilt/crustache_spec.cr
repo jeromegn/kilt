@@ -1,5 +1,5 @@
 require "../spec_helper"
-require "../../src/kilt/crustache"
+require "../../src/crustache"
 
 class MustacheView
   def has_key?(name)
