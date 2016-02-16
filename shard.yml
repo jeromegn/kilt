@@ -11,3 +11,5 @@ development_dependencies:
     github: jeromegn/slang
   crustache:
     github: MakeNowJust/crustache
+  temel:
+    github: f/temel
