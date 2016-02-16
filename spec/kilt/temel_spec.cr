@@ -1,5 +1,5 @@
 require "../spec_helper"
-require "../../src/kilt/temel"
+require "../../src/temel"
 
 class TemelView
   Kilt.file "spec/fixtures/test.temel"
