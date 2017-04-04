@@ -14,6 +14,7 @@ Simplify developers' lives by abstracting template rendering for multiple templa
 | Mustache | .mustache       | [crustache](https://github.com/MakeNowJust/crustache) | [@MakeNowJust](https://github.com/MakeNowJust) |
 | Slang    | .slang          | [slang](https://github.com/jeromegn/slang) | [@jeromegn](https://github.com/jeromegn) |
 | Temel    | .temel          | [temel](https://github.com/f/temel) | [@f](https://github.com/f) |
+| Crikey   | .crikey         | [crikey](https://github.com/domgetter/crikey) | [@domgetter](https://github.com/domgetter) |
 
 See also:
 [Registering your own template engine](#registering-your-own-template-engine).
