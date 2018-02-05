@@ -14,4 +14,4 @@ development_dependencies:
   temel:
     github: f/temel
   liquid:
-    github: Techmagister/liquid.cr
+    github: TechMagister/liquid.cr
