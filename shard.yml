@@ -13,3 +13,5 @@ development_dependencies:
     github: MakeNowJust/crustache
   temel:
     github: f/temel
+  liquid:
+    github: TechMagister/liquid.cr
