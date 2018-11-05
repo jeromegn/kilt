@@ -5,7 +5,6 @@ class View
 end
 
 describe Kilt do
-
   it "renders ecr" do
     Kilt.render("spec/fixtures/test.ecr").should eq("<span>#{Process.pid}</span>")
   end
@@ -24,5 +23,4 @@ describe Kilt do
     Kilt.register_engine "raw", Raw.embed
     Kilt.render("spec/fixtures/test.raw").should eq("Hello World!")
   end
-
 end

@@ -14,13 +14,11 @@ class MustacheView
 end
 
 describe "kilt/crustache" do
-
   it "renders crustache" do
-    Kilt.render("spec/fixtures/test.mustache", { "pid" => Process.pid }).should eq("<span>#{Process.pid}</span>")
+    Kilt.render("spec/fixtures/test.mustache", {"pid" => Process.pid}).should eq("<span>#{Process.pid}</span>")
   end
 
   it "works with classes" do
     MustacheView.new.to_s.should eq("<span>#{Process.pid}</span>")
   end
-
 end

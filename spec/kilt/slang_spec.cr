@@ -6,7 +6,6 @@ class SlangView
 end
 
 describe "kilt/slang" do
-
   it "renders slang" do
     Kilt.render("spec/fixtures/test.slang").should eq("<span>#{Process.pid}</span>")
   end
@@ -14,5 +13,4 @@ describe "kilt/slang" do
   it "works with classes" do
     SlangView.new.to_s.should eq("<span>#{Process.pid}</span>")
   end
-
 end
