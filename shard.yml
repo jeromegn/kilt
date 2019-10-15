@@ -15,3 +15,5 @@ development_dependencies:
     github: f/temel
   liquid:
     github: TechMagister/liquid.cr
+  jbuilder:
+    github: shootingfly/jbuilder
