@@ -16,6 +16,7 @@ Simplify developers' lives by abstracting template rendering for multiple templa
 | Temel    | .temel          | [temel](https://github.com/f/temel) | [@f](https://github.com/f) |
 | Crikey   | .crikey         | [crikey](https://github.com/domgetter/crikey) | [@domgetter](https://github.com/domgetter) |
 | Liquid   | .liquid         | [liquid](https://github.com/TechMagister/liquid.cr) | [@docelic](https://github.com/docelic) |
+| Jbuilder | .jbuilder       | [jbuilder](https://github.com/shootingfly/jbuilder) | [@shootingfly](https://github.com/shootingfly) |
 
 See also:
 [Registering your own template engine](#registering-your-own-template-engine).
