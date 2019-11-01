@@ -17,3 +17,5 @@ development_dependencies:
     github: TechMagister/liquid.cr
   jbuilder:
     github: shootingfly/jbuilder
+  water:
+    github: shootingfly/water
