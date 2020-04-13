@@ -1,4 +1,4 @@
-# Kilt [![Build Status](https://travis-ci.org/jeromegn/kilt.svg?branch=master)](https://travis-ci.org/jeromegn/kilt) [![Dependency Status](https://shards.rocks/badge/github/jeromegn/kilt/status.svg)](https://shards.rocks/github/jeromegn/kilt) [![devDependency Status](https://shards.rocks/badge/github/jeromegn/kilt/dev_status.svg)](https://shards.rocks/github/jeromegn/kilt)
+# Kilt [![Build Status](https://travis-ci.org/jeromegn/kilt.svg?branch=master)](https://travis-ci.org/jeromegn/kilt)
 
 Generic templating interface for Crystal.
 
