@@ -1,5 +1,6 @@
 name: kilt
 version: 0.6.0
+crystal: '< 2.0.0'
 
 authors:
   - Jerome Gravel-Niquet <jeromegn@gmail.com>
