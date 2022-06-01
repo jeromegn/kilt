@@ -15,7 +15,7 @@ module Kilt
     {% if Kilt::ENGINES[ext] %}
       {{Kilt::ENGINES[ext]}}({{filename}}, {{io_name}}, {{*args}})
     {% else %}
-      raise Kilt::Exception.new("Unsupported template engine for extension: \"" + {{ext}} + "\"")
+      {% raise "Unsupported template engine for extension: #{ext}" %}
     {% end %}
   end
 
